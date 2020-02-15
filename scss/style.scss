@@ -1,0 +1,197 @@
+@import 'normalize';
+@import 'variables';
+@import 'mixins';
+// @import 'socials';
+// @import 'slider';
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 10px;
+}
+
+body {
+    min-height: 100%;
+    @include font(1.4rem, $text-color, 400, $text-ff, 1.6);
+    background-image: linear-gradient(rgba(41, 45, 62, 0.87)), url(../img/bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h3 {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.container {
+    max-width: 520px;
+    margin: 40px auto;
+}
+
+.game {
+    margin: 0 auto;
+    max-width: 600px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__info {
+        flex-basis: 60%;
+        align-self: start;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__rating {
+        position: relative;
+
+        & span {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            color: #aaadbb;
+        }
+    }
+
+    &__title {
+        font-size: 3.2rem;
+        color: $brand-color;
+        line-height: 1.2;
+    }
+
+    &__subtitle {
+        color: $brand-color;
+    }
+
+    &__description {
+        margin-bottom: 50px;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.tabs {
+    background-color: #212534;
+    min-width: 100%;
+
+    &__wrap {
+        background-color: #2b3040;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    &__link {
+        text-align: center;
+        color: #8d91a3;
+        padding: 25px 20px;
+
+        & #tooltip {
+            filter: url(#filter);
+        }
+
+        & #card {
+            filter: url(#filter-card);
+        }
+
+        & #basket {
+            filter: url(#filter-basket);
+        }
+
+        &.active {
+            border-bottom: 2px solid $brand-color;
+            color: $brand-color;
+
+            & svg {
+                & filter feFlood {
+                    flood-color: $brand-color;
+                }
+            }
+        }
+    }
+
+    &__content {
+        display: none;
+        min-height: 300px;
+    }
+
+    &__content.active {
+        display: block;
+    }
+
+}
+
+.information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__img {
+        text-align: center;
+        flex-basis: 30%;
+    }
+}
+
+.stars {
+    margin: 20px 0;
+
+    & i {
+        color: #9da1a6;
+    }
+
+    @include hfa {
+        color: $stars-color;
+        cursor: pointer;
+    }
+
+    & i.active {
+        color: $stars-color;
+    }
+}
+
+.price {
+    &__full {
+        font-size: 3.2rem;
+        color: $brand-color;
+        line-height: 1.2;
+    }
+
+    &__discount {
+        color: $stars-color;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+}
+
+.btn {
+    background-color: $btn-color;
+    border: 2px solid $btn-color;
+    border-radius: 5px;
+    padding: 15px 40px;
+    outline: none;
+    text-decoration: none;
+    color: $brand-color;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in;
+
+    @include hfa {
+        background-color: transparent;
+        color: $btn-color;
+    }
+}

@@ -1,0 +1,27 @@
+.socials {
+    padding: 0;
+    list-style: none;
+}
+
+.social {
+    display: inline-block;
+    margin: 0 2px;
+
+    &__link {
+        display: inline-block;
+        text-decoration: none;
+        color: $title-color;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        border: 2px solid $title-color;
+        border-radius: 50%;
+        opacity: .6;
+        text-align: center;
+
+        @include hfa {
+            color: #fff;
+            background-color: $title-color;
+        }
+    }
+}
